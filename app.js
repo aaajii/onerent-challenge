@@ -26,10 +26,7 @@ app.use(
   })
 );
 
-mongoose
-  .connect(
-    `mongodb+srv://graphql:hyHbbCs9RO906kKV@cluster0.5w9ty.gcp.mongodb.net/graphql-react-dev?retryWrites=true`
-  )
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.5w9ty.gcp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(8000);
   })

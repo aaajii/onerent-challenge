@@ -27,7 +27,7 @@ module.exports = {
                 rent: 3500,
             });
             const result = await property.save();
-            const owner = await User.findById("6074d37d65d9a5b5e8928580");
+            const owner = await User.findOne({firstName:"John"});
             if (!owner){
                 throw new Error("UserID not found.");
             }
