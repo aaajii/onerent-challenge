@@ -27,12 +27,12 @@ module.exports = {
                 rent: 3500,
             });
             const result = await property.save();
-            const owner = await User.findOne({firstName:"John"});
-            if (!owner){
-                throw new Error("UserID not found.");
-            }
-            owner.properties.push(property);
-            await owner.save()
+            // const owner = await User.findOne({firstName:"John"});
+            // if (!owner){
+                // throw new Error("UserID not found.");
+            // }
+            // owner.properties.push(property);
+            // await owner.save()
             return { ...result._doc };
         } catch (err) {
             throw err;

@@ -10,11 +10,7 @@ const userSchema = new Schema({
     lastName: {
         type: String,
         required: true,
-    },
-    properties: [{
-        type: Schema.Types.ObjectId,
-        ref: "Property",
-    }],
+    }
 });
 
 // Setting schema index for simple search function
