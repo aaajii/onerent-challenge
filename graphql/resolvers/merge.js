@@ -1,3 +1,7 @@
+/*
+Merged functions and helpers are found here
+*/
+
 const Property = require("../../models/Property");
 const User = require("../../models/User");
 

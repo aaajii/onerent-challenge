@@ -16,6 +16,8 @@ const userSchema = new Schema({
         ref: "Property",
     }],
 });
+
+// Setting schema index for simple search function
 userSchema.index({'$**': 'text'});
 
 module.exports = mongoose.model("User", userSchema);

@@ -22,6 +22,8 @@ const propertySchema = new Schema(
     },
   },
 );
+
+// Setting schema index for simple search function
 propertySchema.index({'$**': 'text'});
 
 module.exports = mongoose.model('Property', propertySchema);

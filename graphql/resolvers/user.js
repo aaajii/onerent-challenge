@@ -16,7 +16,7 @@ module.exports = {
     createUser: async (args) => {
         const user = new User({
             firstName: args.userInput.firstName,
-            lastName: "Smith, it's always been Smith.",
+            lastName: "Smith",
         });
         let createdUser;
         try {
