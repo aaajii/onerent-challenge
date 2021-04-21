@@ -1,5 +1,6 @@
 const userResolver = require('./user')
 const propertyResolver = require('./property')
+const bookingResolver = require('./booking')
 const User = require('../../models/User')
 const Property = require('../../models/Property')
 const {transformUser} = require("./merge")
@@ -25,6 +26,7 @@ const rootResolver = {
     },
     ...propertyResolver,
     ...userResolver,
+    ...bookingResolver,
 }
 
 module.exports = rootResolver

@@ -1,12 +1,12 @@
 const Property = require("../../models/Property");
-const User = require("../../models/User");
 
 module.exports = {
     properties: async () => {
         try {
             const properties = await Property.find();
-            return {...properties._doc}
+            return properties
         } catch (error) {
+            console.log(error)
             throw error;
         }
     },
@@ -19,6 +19,7 @@ module.exports = {
                 throw new Error("Property exists already.");
             }
 
+            // City, state, etc. are set already for the sake of simplicity
             const property = new Property({
                 street: args.propertyInput.street,
                 city: "San Jose",
@@ -27,12 +28,6 @@ module.exports = {
                 rent: 3500,
             });
             const result = await property.save();
-            // const owner = await User.findOne({firstName:"John"});
-            // if (!owner){
-                // throw new Error("UserID not found.");
-            // }
-            // owner.properties.push(property);
-            // await owner.save()
             return { ...result._doc };
         } catch (err) {
             throw err;
